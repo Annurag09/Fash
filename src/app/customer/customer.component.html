@@ -1,0 +1,30 @@
+<router-outlet></router-outlet>
+<div class="container-fluid">    
+    <h2>Customers</h2>
+    
+    <span><fa-icon class="icons" [icon]="faGridIcon"> </fa-icon><button type="button" class="btn btn-link"(click)="grid_class()">Grid View</button></span>
+    <span><fa-icon class="icons" [icon]="faListIcon"> </fa-icon><button type="button" class="btn btn-link"(click)="list_class()">List View</button></span>
+    <span> <fa-icon class="icons" [icon]="faAddIcon"></fa-icon><a [routerLink]="['/editcustomer']">New Customer</a></span>
+    <label>Filter : </label>
+    <input [(ngModel)]="searchText" placeholder="Enter name">
+  </div>
+ 
+  <div [ngClass]="{'GridClass': gridSelected, 'ListClass': listSelected}">
+    <div class="EachCard" *ngFor= "let customer of customerList | search: searchText ; let i=index">
+        <div class="header">
+            <h4 class="heading">      
+            <a [routerLink]="['/customerdetails',customer._id]">{{ customer.firstName }} {{customer.lastName}}</a>
+                
+                        <a [routerLink]="['/postcustomer',customer._id]">
+                            <fa-icon class="icon" [icon]="faEditIcon"> </fa-icon></a>
+                
+                </h4>
+          </div>
+          <img *ngIf="customer.gender == 'male'" src="http://ideainside.co.in/wp-content/uploads/2017/10/Engineer-150x150.png" alt="">
+          <img *ngIf="customer.gender == 'female'" src="http://ideainside.co.in/wp-content/uploads/2017/10/Engineer-150x150.png" alt="">
+        <label class="labels">{{customer.email}}</label>
+    </div>
+</div>
+<div class="customer-pagination">
+    <ngb-pagination [collectionSize]="60" [(page)]="pageCount" aria-label="Default pagination"></ngb-pagination>
+  </div> 

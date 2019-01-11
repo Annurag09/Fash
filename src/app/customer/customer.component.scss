@@ -1,0 +1,58 @@
+.GridClass{
+    width: 100%;
+min-width: 100%;
+display: flex;
+flex-direction: row;
+padding: 1em;
+flex-wrap: wrap;
+}
+
+.ListClass{
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    flex-wrap: wrap;
+    }
+
+.EachCard{
+    height: 200px;
+    width: 358px;
+    background-color: #f5eaed;
+    border-style: solid;
+    border-color: black;
+    margin: 0 1em 1em 0.5em;
+    // width: 16em;
+    // height: 8.5em;
+    // border-bottom: 1px solid #8080802b;
+    // border-right: 1px solid #8080802b;
+    // border-left: 1px solid #8080802b;
+}
+.header{
+    background-color: #007bff;
+}
+.img{
+    height: 3em;
+}
+.icon{
+         float: right;
+         }
+.heading{
+    margin: 0px;
+    padding: 5px;
+}
+span{
+    display:inline-block; 
+    margin: 0 2em 0 2em;
+}
+.customer-pagination{
+    display: flex;
+    justify-content: center;
+   position: fixed;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+}
+
+

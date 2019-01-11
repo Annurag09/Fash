@@ -1,0 +1,21 @@
+<router-outlet></router-outlet>
+<div class="InnerDetails">
+        <label for="username">UserName</label>
+       <input type="text" value="{{customerRes.username}}"/>
+       <label for="email">Email</label>
+       <input type="text" value="{{customerRes.email}}"/>
+       <label for="city">City</label>
+       <input type="text" value="{{customerRes.address.city}}"/>
+       <label for="zipcode">ZipCode</label>
+       <input type="text" value="{{customerRes.address.zipcode}}"/>
+       <label for="gender">Gender</label>
+       <input type="radio" name="gender" value={{customerRes.gender}}> Male <br>
+       <input type="radio" name="gender" value={{customerRes.gender}}> Female
+       <div class="buttons">
+           <button type="button" class="btn btn-danger">Delete</button>
+           <div class="sideButtons">
+                <button type="button" class="btn btn-default">Cancel</button>
+               <button type="button" class="btn btn-success">Update</button>
+        </div>
+   </div>
+</div>

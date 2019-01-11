@@ -1,0 +1,48 @@
+<router-outlet></router-outlet>
+<i class="fas fa-user user-icon"></i>
+
+<span> Customer Information </span>
+
+<div class="menu-items">
+        <i class="fas fa-list-ul"></i> <span class="margin-right">Customer Deatails</span>
+        <i class="fas fa-edit"></i> <span class="pointer" (click)="goToCustomerEditPage()">Edit Customer</span>
+</div>
+
+<div class="edit-customer-container">
+        <img class="user-img" src="https://cdn2.iconfinder.com/data/icons/perfect-flat-icons-2/256/User_man_male_profile_account_person_people.png" alt="">
+        <div class="user-info">
+                <span>{{customerRes?.firstName}} {{customerRes?.lastName}}</span>
+                <div class="clear-height"></div>
+                <span class="address">{{customerRes.address}}</span>
+                <span class="address">{{customerRes.city}}</span>
+                <span class="address">{{customerRes.state}}</span>
+        </div>
+</div>
+  <!-- <div class="details">
+    <div class="properties" *ngFor= "let cat of selectedCustomer; let i=index">
+            <h2 class="header">
+                    <fa-icon class="icon" [icon]="faUserIcon"></fa-icon>
+                    {{cat.name}}
+            </h2>
+             <div class="InnerDetails">
+                 <label for="username">UserName</label>
+                <input type="text" value="{{cat.username}}"/>
+                <label for="email">Email</label>
+                <input type="text" value="{{cat.email}}"/>
+                <label for="city">City</label>
+                <input type="text" value="{{cat.address.city}}"/>
+                <label for="zipcode">ZipCode</label>
+                <input type="text" value="{{cat.address.zipcode}}"/>
+                <label for="gender">Gender</label>
+                <input type="radio" name="gender" value="male"> Male <br>
+                <input type="radio" name="gender" value="female"> Female
+                <div class="buttons">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <div class="sideButtons">
+                         <button type="button" class="btn btn-default">Cancel</button>
+                        <button type="button" class="btn btn-success">Update</button>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div> -->
