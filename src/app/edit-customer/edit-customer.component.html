@@ -1,26 +1,31 @@
 <router-outlet></router-outlet>
-<form #signupForm="ngForm" (ngSubmit)="editCustomerDetails(signupForm, content)">
+<form ngNativeValidate #signupForm="ngForm" (ngSubmit)="editCustomerDetails(signupForm, content)">
+            <div class="form-container">
         <label for="firstName">First Name</label>
-        <input type="text" name="firstName" id="firstName" ngModel>
+        <input type="text" name="firstName"  ngModel required>
 
         <label for="lastName">Last Name</label>
-        <input type="text" name="lastName" id="lastName" ngModel>
+        <input type="text" name="lastName"  ngModel required>
 
-        <label for="gender">Gender</label>
-        <input type="radio" name="gender" value="male"> Male <br>
-        <input type="radio" name="gender" value="female"> Female <br>
-
+        <label for="gender">Gender<br>
+           <input type="radio" value="male" name="gender" (change)="selectGender('male')"> Male
+           <input type="radio" value="female" name="gender" (change)="selectGender('female')"> Female
+        </label>
         <label for="email">Email</label>
-        <input type="text" name="email" id="email" ngModel>
+        <input type="text" name="email"  ngModel>
 
         <label for="address">Address</label>
-        <input type="text" name="address" id="address" ngModel>
+        <input type="text" name="address"  ngModel>
 
         <label for="city">City</label>
-        <input type="text" name="city" id="city" ngModel>
+        <input type="text" name="city"  ngModel>
 
         <label for="state">State</label>
-        <input type="text" name="state" id="state" ngModel>
-      
-         <button type="submit">Sign Up</button> 
-      </form>
+        <input type="text" name="state"  ngModel>
+        <button type="submit" class="btn btn-success"  (click)="popUpPost()">Save</button>
+        </div>      
+        <app-popup [showMessage]="addedstatus" [openClass]= "openClass"></app-popup>
+      </form>  
+      <!-- <button (click)="showToaster()">  
+        Show Toaster
+    </button>     -->

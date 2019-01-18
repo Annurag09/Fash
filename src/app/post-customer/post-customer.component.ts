@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../shared/customer.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { faUser} from '@fortawesome/free-solid-svg-icons';
+import { Popup } from '../shared/popup';
 
 @Component({
   selector: 'app-post-customer',
@@ -11,6 +14,12 @@ import { ActivatedRoute } from '@angular/router';
 export class PostCustomerComponent implements OnInit {
   private customerId;
   private customerRes = {};
+  private requestObj;
+  private selectedGender;
+  private openClass = false;
+  private faUserIcon = faUser;
+  public editStatus: Popup;
+
   constructor(private customerService: CustomerService, private http: HttpClient, private route: ActivatedRoute) {
     this.customerId = this.route.snapshot.params.id;
    }
@@ -23,4 +32,44 @@ export class PostCustomerComponent implements OnInit {
       this.customerRes = Resp
     );
   }
+
+  private selectGender(gender) {
+    this.selectedGender = gender;
+  }
+  private editCustomerDetails(form: NgForm, content) {
+    console.log(form.value);
+    this.requestObj = {
+      firstName : form.value.firstName,
+      lastName :  form.value.lastName,
+      address : form.value.address,
+      city : form.value.city,
+      state :  form.value.state,
+      email :  form.value.email,
+      gender : this.selectedGender
+    };
+      this.customerService.editCustomerDataById(this.requestObj).subscribe(
+        (res) =>
+        console.log('Edited') );
+   }
+  DeleteEntry() {
+    this.customerService.deleteCustomerDataById(this.customerId).subscribe(
+      (res) => console.log('Deleted') );
+      this.openClass = !this.openClass;
+      this.editStatus = {
+        'className' : 'delete',
+       'header' :  'Message',
+       'body' : 'Customer Deleted',
+       'footer' : ''
+      };
+  }
+  popUpEdit() {
+    this.openClass = !this.openClass;
+    this.editStatus = {
+      'className' : 'update',
+     'header' :  'Message',
+     'body' : 'Details Edited',
+     'footer' : ''
+    };
+  }
 }
+

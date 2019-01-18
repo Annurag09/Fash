@@ -4,6 +4,9 @@ import { CustomerService } from '../shared/customer.service';
 import { Customer } from '../shared/customer';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { ToastrService } from 'ngx-toastr';
+import { Popup } from '../shared/popup';
 
 @Component({
   selector: 'app-edit-customer',
@@ -14,6 +17,11 @@ export class EditCustomerComponent implements OnInit {
 
   private requestObj;
   private customerRes: Customer;
+  private selectedGender;
+  openClass = false;
+
+   public addedstatus: Popup;
+  // tslint:disable-next-line:max-line-length
   constructor(private customerService: CustomerService, private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -29,10 +37,22 @@ export class EditCustomerComponent implements OnInit {
       city : form.value.city,
       state :  form.value.state,
       email :  form.value.email,
-      gender : form.value.gender
+      gender : this.selectedGender
     };
       this.customerService.addNewCustomerData(this.requestObj).subscribe(
         (res) =>
         console.log('Sent') );
       }
+      private selectGender(gender) {
+        this.selectedGender = gender;
       }
+      popUpPost() {
+       this.openClass = !this.openClass;
+       this.addedstatus = {
+         'className' : 'update',
+        'header' :  'Message',
+        'body' : 'Sucessfully Added Customer',
+        'footer' : ''
+       };
+    }
+  }

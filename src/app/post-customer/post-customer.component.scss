@@ -1,0 +1,51 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50%;
+   // padding: 5em 48em 0 5em;
+  }
+//   .btn-success{
+//     float: right;
+//     height: 3em;
+//     width: 7em;
+//   }
+  input[type="text"]
+  {
+    height: 37px;
+    margin-bottom: 17px;
+    border-left-color: #5cb85c;
+    border-left-style: solid;
+    border-left-width: 10px;
+    padding-inline-start: 7px;
+    min-width: 250px;
+  }
+  input[type="radio"]
+  {
+    display: inline;
+  }
+   .buttons{
+        margin-top: 2em;
+        display: flex;
+        justify-content: space-between;
+    }
+    .sideButtons{
+      display: flex;
+      justify-content: space-between;
+      width: 30%;
+    }
+    .btn-default{
+        margin-right: 1em;
+    }
+  .icon{
+    height: 2em;
+  }
+  h2{
+    padding-top: 80px;
+    margin-top: 0px;
+    padding-left: 1em;
+  }
+  form{
+    margin-left: 2em;
+    margin-right: 18em;
+  }
+ 

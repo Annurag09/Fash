@@ -15,6 +15,10 @@ import { AboutComponent } from './about/about.component';
 import { OrdersComponent } from './orders/orders.component';
 import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 import { PostCustomerComponent } from './post-customer/post-customer.component';
+import { PopupComponent } from './popup/popup.component';
+import { ToastrModule } from 'ngx-toastr';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +28,8 @@ import { PostCustomerComponent } from './post-customer/post-customer.component';
     AboutComponent,
     OrdersComponent,
     EditCustomerComponent,
-    PostCustomerComponent
+    PostCustomerComponent,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,7 @@ import { PostCustomerComponent } from './post-customer/post-customer.component';
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [CustomerService],

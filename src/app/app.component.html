@@ -3,18 +3,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-        <nav class="navbar navbar">
-           
-      <div class="navbar-header">
-          <img class="header-logo" src="http://perfildigital.com.co/wp-content/uploads/2016/01/people-icon.png" alt="">
-          <h3 class="header-title">Customer Manager</h3>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a routerLink= '/customer'>Customer</a></li>
-        <li><a routerLink= '/orders'>Orders</a></li>
-        <li><a routerLink= '/about'>About</a></li>
-        <li><a href="#">Login</a></li>
-      </ul>
-  </nav>
+
+<div class="navbar" id="nav">
+  <img class="header-logo active" src="http://perfildigital.com.co/wp-content/uploads/2016/01/people-icon.png" alt="">
+    <span class="header active">Customer Manager</span>
+  <a href="javascript:void(0);" class="icon" (click)="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+  <a routerLink= '/customer'>Customer</a>
+  <a  routerLink= '/orders'>Orders</a>
+  <a routerLink= '/about'>About</a>
+</div>
 <router-outlet></router-outlet>

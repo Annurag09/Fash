@@ -1,21 +1,40 @@
 <router-outlet></router-outlet>
-<div class="InnerDetails">
-        <label for="username">UserName</label>
-       <input type="text" value="{{customerRes.username}}"/>
-       <label for="email">Email</label>
-       <input type="text" value="{{customerRes.email}}"/>
-       <label for="city">City</label>
-       <input type="text" value="{{customerRes.address.city}}"/>
-       <label for="zipcode">ZipCode</label>
-       <input type="text" value="{{customerRes.address.zipcode}}"/>
-       <label for="gender">Gender</label>
-       <input type="radio" name="gender" value={{customerRes.gender}}> Male <br>
-       <input type="radio" name="gender" value={{customerRes.gender}}> Female
-       <div class="buttons">
-           <button type="button" class="btn btn-danger">Delete</button>
-           <div class="sideButtons">
-                <button type="button" class="btn btn-default">Cancel</button>
-               <button type="button" class="btn btn-success">Update</button>
-        </div>
-   </div>
-</div>
+<h2>
+    <fa-icon class="icon" [icon]="faUserIcon"></fa-icon>
+ {{ customerRes.firstName}} {{ customerRes.lastName}}
+   </h2>
+<form #signupForm="ngForm" (ngSubmit)="editCustomerDetails(signupForm, content)">
+            <div class="form-container">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" ngModel value="{{ customerRes.firstName}}">
+
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" ngModel  value="{{ customerRes.lastName}}">
+
+        <label for="gender">Gender<br>
+            <input type="radio" name="gender"  (change)="selectGender('male')" [checked]="customerRes ? customerRes.gender === 'male' : true"> Male
+            <input type="radio" name="gender"  (change)="selectGender('female')" [checked]="customerRes ? customerRes.gender === 'female' : false"> Female
+        </label>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" ngModel  value="{{ customerRes.lastName}}">
+
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" ngModel  value="{{ customerRes.address}}">
+
+        <label for="city">City</label>
+        <input type="text" name="city" id="city" ngModel  value="{{ customerRes.city}}">
+
+        <label for="state">State</label>
+        <input type="text" name="state" id="state" ngModel  value="{{ customerRes.state}}">
+        <div class="buttons">
+            <button type="button" (click)="DeleteEntry()" class="btn btn-danger">Delete</button>
+            <div class="sideButtons">
+                 <button type="button" class="btn btn-default">Cancel</button>
+                 <button type="submit" class="btn btn-success" (click)="popUpEdit()" >Update</button>
+         </div> 
+    </div>   
+      </div>
+      <app-popup [showMessage]="editStatus" [openClass]= "openClass"></app-popup>
+      </form>
+    
+ 

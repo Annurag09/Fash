@@ -3,7 +3,7 @@ import { CustomerService } from '../shared/customer.service';
 import { Customer } from '../shared/customer';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Params } from '@angular/router';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faGripVertical, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-customer-details',
@@ -20,6 +20,8 @@ export class CustomerDetailsComponent implements OnInit {
 
   paramsSubscription: any;
   faUserIcon = faUser;
+  faEditIcon = faEdit;
+  faGridIcon = faGripVertical;
 
   ngOnInit() {
     this.getCustomerDetails(this.customerId);

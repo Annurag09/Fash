@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,20 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  x: any;
   title = 'Customers';
-  faUserIcon = faUsers;
+  fabarIcon = faBars;
+
+  myFunction() {
+    this.x = document.getElementById('nav');
+    if (this.x.className === 'navbar') {
+      this.x.className += ' responsive';
+    } else {
+      this.x.className = 'navbar';
+    }
+  }
+
 }
+
+
+

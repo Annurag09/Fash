@@ -1,0 +1,24 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    padding: 5em 48em 0 5em;
+  }
+  .btn-success{
+    float: right;
+    height: 3em;
+    width: 7em;
+  }
+  input[type="text"]
+  {
+    height: 37px;
+    margin-bottom: 17px;
+    border-left-color: #5cb85c;
+    border-left-style: solid;
+    border-left-width: 10px;
+    min-width: 250px;
+  }
+  input[type="radio"]
+  {
+    display: inline;
+  }
+  

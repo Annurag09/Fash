@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../shared/customer.service';
 import { Customer } from '../shared/customer';
 import { HttpClient } from '@angular/common/http';
-import {  faList, faPlus, faGripVertical, faEdit } from '@fortawesome/free-solid-svg-icons';
+import {  faList, faPlus, faGripVertical, faEdit, faUser} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 
@@ -15,21 +15,24 @@ import { Router } from '@angular/router';
 })
 export class CustomerComponent implements OnInit {
 
-  customerList: Customer[];
-  faEditIcon = faEdit;
-  faListIcon = faList;
-  faAddIcon = faPlus;
-  faGridIcon = faGripVertical;
-    i: any;
-     gridSelected = true;
-    listSelected = false;
-    private pageCount = 1;
-    private pageSize = 4;
-    private start = 0;
-    private end = 8;
-    private customerRes;
+  private  customerList: Customer[];
+  private faEditIcon = faEdit;
+  private faListIcon = faList;
+  private faAddIcon = faPlus;
+  private faGridIcon = faGripVertical;
+  private faUserIcon = faUser;
+  private i: any;
+  private gridSelected = true;
+  private listSelected = false;
+  private pageCount = 1;
+  private pageSize = 4;
+  private start = 0;
+  private end = 8;
+  private customerRes;
 
-  constructor(private customerService: CustomerService , private http: HttpClient, private router: Router) { }
+  constructor(private customerService: CustomerService , private http: HttpClient, private router: Router) {
+    this.customerRes = [];
+  }
 
   ngOnInit() {
      this.GetList();
@@ -62,6 +65,10 @@ public ngDoCheck() {
 }
 private goToCustomerPage() {
   this.router.navigate(['customer']);
+}
+
+private new_customer() {
+  this.router.navigate(['/editcustomer']);
 }
 
 }
