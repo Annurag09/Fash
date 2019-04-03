@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #007bff;
+  background-color: #337ab7;
   position: fixed;
   z-index: 3;
   width: 100%;
@@ -43,7 +43,7 @@
 
 @media screen and (max-width: 720px) {
   .navbar.responsive {position: fixed;
-  background-color: #007bff;
+  background-color: #337ab7;
   width: 100%;
   z-index: 3;
 }

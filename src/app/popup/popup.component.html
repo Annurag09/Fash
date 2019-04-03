@@ -1,24 +1,13 @@
 
 <div *ngIf="openClass" class="openClass">
-    <div  [ngClass]="showMessage.className">
+    <div  [ngClass]="showMessage?.className">
       <div class="header">
-       {{showMessage.header}}
+       {{showMessage?.header}}
         <a class="close" routerLink= '/customer'>&times;</a>
       </div>
       <div class="body">
-           {{showMessage.body}}
+           {{showMessage?.body}}
           </div>
           
         </div>
       </div>
-
-    <!-- <div [ngClass]="{'openClass': openSelected, 'closeClass': closeSelected}">
-        <div class="popup">
-            <!-- <h4>{{showMessage.[0]}}</h4>
-            <a class="close" href="#">&times;</a>
-            <div class="content">
-               {{showMessage.[1]}}
-            </div> 
-            Hello
-        </div>
-    </div> -->

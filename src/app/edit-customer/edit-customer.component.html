@@ -22,10 +22,14 @@
 
         <label for="state">State</label>
         <input type="text" name="state"  ngModel>
-        <button type="submit" class="btn btn-success"  (click)="popUpPost()">Save</button>
+        <button type="submit" class="btn btn-success" (click)="popUpPost()">Save</button>
         </div>      
         <app-popup [showMessage]="addedstatus" [openClass]= "openClass"></app-popup>
       </form>  
       <!-- <button (click)="showToaster()">  
         Show Toaster
     </button>     -->
+    <!-- <button type="submit" class="btn btn-success" (click)="popUpPost()">Save</button>
+  </div>      
+  <app-popup [showMessage]="addedstatus" [openClass]= "openClass"></app-popup>
+</form>  -->

@@ -5,7 +5,6 @@ import { Customer } from '../shared/customer';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { ToastrService } from 'ngx-toastr';
 import { Popup } from '../shared/popup';
 
 @Component({
@@ -30,14 +29,13 @@ export class EditCustomerComponent implements OnInit {
   private editCustomerDetails(form: NgForm, content) {
     console.log(form.value);
     this.requestObj = {
-      // tslint:disable-next-line:max-line-length
       firstName : form.value.firstName,
-      lastName :  form.value.lastName,
+      lastName : form.value.lastName,
       address : form.value.address,
       city : form.value.city,
-      state :  form.value.state,
-      email :  form.value.email,
-      gender : this.selectedGender
+      state : form.value.state,
+      email : form.value.email,
+      gender :form.value.selectedGender
     };
       this.customerService.addNewCustomerData(this.requestObj).subscribe(
         (res) =>

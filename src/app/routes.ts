@@ -5,6 +5,9 @@ import { OrdersComponent } from './orders/orders.component';
 import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { PostCustomerComponent } from './post-customer/post-customer.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+
 export const appRoutes: Routes = [
     {path: '', redirectTo: 'customer', pathMatch: 'full'},
     {path: 'customer', component: CustomerComponent},
@@ -12,5 +15,7 @@ export const appRoutes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'orders', component: OrdersComponent },
     { path: 'editcustomer', component: EditCustomerComponent },
-    { path: 'postcustomer/:id', component: PostCustomerComponent }
+    { path: 'postcustomer/:id', component: PostCustomerComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent }
  ];
