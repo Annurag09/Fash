@@ -1,0 +1,72 @@
+<router-outlet></router-outlet>
+<div class="background">
+<div class="wrap cf">
+    <div class="heading cf">
+        <h1>My Shopping Bag</h1>
+        <a routerLink='/products'class="buttonc">Continue Shopping</a>
+    </div>
+
+    <table border="1">
+        <tr>
+            <th>Remove</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+        <tr>
+            <div class="cart">
+                <ul class="cartWrap">
+                    <app-eachcards *ngFor="let cart of cartRes" [records]="cart" [view]=true></app-eachcards>
+                </ul>
+            </div>
+        </tr>   
+    </table>
+
+<!-- <table border="1">
+    <tr>
+        <th>Remove</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Sub Total</th>
+    </tr>
+    <tr *ngFor="let item of items">
+        <td align="center">
+            <a (click)="remove(item.product.id)">X</a>
+        </td>
+        <td>{{item.product.id}}</td>
+        <td>{{item.product.name}}</td>
+        <td>
+            <img src="{{item.product.photo}}" width="50">
+        </td>
+        <td>{{item.product.price}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.product.price * item.quantity}}</td>
+    </tr>
+    <tr>
+        <td colspan="6" align="right">Total</td>
+        <td>{{total}}</td>
+    </tr>
+</table> -->
+  <div class="subtotal cf">
+    <ul ><div class="headingo">
+            <h2>Order Summary</h2>
+    </div>
+        <div class="totalRow"><span class="label">Price</span><span class="value">₹35.00</span></div>
+        <div class="totalRow"><span class="label">Shipping</span><span class="value">₹5.00</span></div>
+        <div class="totalRow"><span class="label">Tax</span><span class="value">₹4.00</span></div>
+        <div class="totalRow final"><span class="label">Payable Amount</span><span class="value">₹44.00</span></div>
+        <div class="totalRowb"><a href="#" class="buttonc">Place Order</a></div>
+    </ul>
+ </div>
+</div>
+</div>
+
+
+
+
