@@ -28,17 +28,19 @@ export class CustomerComponent implements OnInit {
   private pageSize = 4;
   private start = 0;
   private end = 8;
-  private customerRes;
+  private customerRes:any[]=[];
 
   constructor(private customerService: CustomerService , private http: HttpClient, private router: Router) {
-    this.customerRes = [];
+
   }
 
   ngOnInit() {
      this.GetList();
   }
   GetList() {
-  this.customerService.getCustomerData().subscribe((data) => this.customerRes = data);
+  this.customerService.getCustomerData().subscribe((data:any[]) => {
+    this.customerRes = data;
+  });
 }
 
 grid_class() {
@@ -61,7 +63,7 @@ list_class() {
 public ngDoCheck() {
   this.start = this.pageSize * (this.pageCount - 1);
   this.end = this.pageSize * this.pageCount;
-  this.customerList = this.customerRes.slice(this.start, this.end);
+  // this.customerList = this.customerRes && this.customerRes.(this.start, this.end);
 }
 private goToCustomerPage() {
   this.router.navigate(['customer']);

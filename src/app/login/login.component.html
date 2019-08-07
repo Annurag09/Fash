@@ -1,29 +1,38 @@
-    
+<!--     
 <div class="formcontainer">
     <div class="formbody">
         <form style="width:100%;" [formGroup]="loginForm">
             <div class="header">Welcome</div>
-            <div>
-                <div style="width:100%;">
-                    <input type="text" formControlName="logemail" matInput placeholder="Username">
+                <div>
+                    <input type="text" formControlName="logemail" placeholder="Username">
                 </div>
-                <span>Username cannot be blank</span>
-            </div>
-            <div>
-                <div style="width:100%;">
-                    <input type="password" formControlName="logpassword" matInput placeholder="Password">
+                <div>
+                    <input type="password" formControlName="logpassword"  placeholder="Password">
                 </div>
-                <span>Password cannot be blank</span>
             </div>
-            <div style="margin-top:40px;">
+            <div class='sideButtons'>
                 <button class="form-btn" (click)="login()">Sign In</button>
-            </div>
+            <button class="form-btn-hollow" (click)="movetoregister()">Register</button>
+        </div>
         </form>
     </div>
 
     <div>
-        <div style="width: 290px; padding: 20px;">
-            <button class="form-btn-hollow" (click)="movetoregister()">Register</button>
-        </div>
+          
     </div>
+</div> -->
+
+<div class="formcontainer">
+<div class="login">
+    <div class="login-triangle"></div>
+        <h2 class="login-header"><b>Log In</b></h2> 
+        <form class="login-container" [formGroup]="loginForm">
+                <p><input type="text" formControlName="logemail" placeholder="Username"></p>
+                <p><input type="password" formControlName="logpassword"  placeholder="Password"></p>
+                <div class='sideButtons'>
+                        <button class="myButton" (click)="login()">Log In</button>
+                    <button class="myButton" (click)="movetoregister()">Register</button>
+                </div>
+        </form>
+</div>
 </div>

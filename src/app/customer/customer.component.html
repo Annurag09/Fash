@@ -13,7 +13,7 @@
 </div>
  
   <div [ngClass]="{'GridClass': gridSelected, 'ListClass': listSelected}">
-    <div class="EachCard" *ngFor= "let customer of customerList | search: searchText ; let i=index">
+    <div class="EachCard" *ngFor= "let customer of customerRes | search: searchText ; let i=index">
         <div class="header">
             <h4 class="heading">      
             <a [routerLink]="['/customerdetails',customer._id]">{{ customer.firstName }} {{customer.lastName}}</a>

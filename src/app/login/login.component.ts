@@ -37,12 +37,12 @@ export class LoginComponent implements OnInit {
            var currentUser = JSON.parse(localStorage.getItem('currentUser'));
            var token = data['data']['token']; // your token
             sessionStorage.setItem('token', JSON.stringify({ token: token, user: data['data']['user'] }));
+            
           },
           error => { }
         );
     }
   }
-
   movetoregister() {
     this._router.navigate(['../register'], { relativeTo: this._activatedRoute });
   }

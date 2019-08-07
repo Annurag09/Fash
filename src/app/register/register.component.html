@@ -1,4 +1,4 @@
-<div class="formcontainer">
+<!-- <div class="formcontainer">
   <div class="formbody">
       <form style="width:100%;" [formGroup]="myForm">
           <div class="header">Register</div>
@@ -36,4 +36,41 @@
           <button class="form-btn-hollow" (click)="movetologin()">Login</button>
       </div>
   </div>
-</div>
+</div> -->
+
+
+<div class="formcontainer">
+        <div class="login">
+            <div class="login-triangle"></div>
+                <h2 class="login-header"><b>Register</b></h2> 
+                <form class="login-container" [formGroup]="myForm">
+                            <div>
+                                <div style="width:100%;">
+                                    <input type="text" formControlName="email" matInput placeholder="Email" id="email">
+                                </div>                
+                                <span *ngIf="isValid('email')">Entered email is invalid</span>
+                            </div>
+                            <div>
+                                <div style="width:100%;">
+                                    <input type="text" formControlName="username" matInput placeholder="Username" id="user">
+                                </div>
+                                <span *ngIf="isValid('username')">Username is required</span>
+                            </div>
+                            <div>
+                                <div style="width:100%;">
+                                    <input type="password" formControlName="password" matInput placeholder="Password" id="pass">
+                                </div>
+                                <span *ngIf="isValid('password')">Password is a mandatory field</span>
+                            </div>
+
+                             <div class='sideButtons'>
+                                <button class="myButton" (click)="register()">Register</button>
+                                <button class="myButton" (click)="movetologin()">Log In</button>
+                            </div>
+                  
+                            <div style="text-align: center;">                
+                                {{successMessage}}
+                            </div>
+                </form>
+            </div>
+</div> 

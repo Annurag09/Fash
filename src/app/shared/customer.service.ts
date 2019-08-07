@@ -12,8 +12,8 @@ export class CustomerService {
   private APIUserUrl;
 
   constructor(private http: HttpClient, private router: Router) {
-    this.APIAllUsersUrl = 'http://localhost:3000/user';
-    this.APIUserUrl = 'http://localhost:3000/user';
+    this.APIAllUsersUrl = 'http://localhost:3000/users';
+    this.APIUserUrl = 'http://localhost:3000/users/';
    }
    public getCustomerData() {
     return this.http.get(this.APIAllUsersUrl);

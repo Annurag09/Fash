@@ -15,11 +15,11 @@ import { map, catchError } from 'rxjs/operators';
 export class HttpConfigInterceptor implements HttpInterceptor {
     constructor() { }
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-         const token: string = sessionStorage.getItem('token');
+       //  const token = JSON.parse(sessionStorage.getItem('token'))['token'];
        // const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTQ4OTIzYmU3YjZhMTNhNDQyMDBhNiIsImlhdCI6MTU1NDI4ODAzMywiZXhwIjoxNTU0MjkxNjMzfQ.dYHONxqAy4Zr7ChEG4BEPgdAZZZXS4_hXgzV7xXDg60";
-        if (token) {
-            request = request.clone({ headers: request.headers.set('x-access-token', token) });
-        }
+        // if (token) {
+        //     request = request.clone({ headers: request.headers.set('x-access-token', token) });
+        // }
 
         if (!request.headers.has('Content-Type')) {
             request = request.clone({ headers: request.headers.set('Content-Type', 'application/json') });
